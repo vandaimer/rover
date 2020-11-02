@@ -4,7 +4,7 @@ class Robot:
     def __init__(self, pos_x, pos_y, direction):
         self.pos_x = pos_x
         self.pos_y = pos_y
-        self.direction = direction
+        self.direction = direction.upper()
 
     def move(self, maxX, maxY):
         if self.direction == 'N':
@@ -18,7 +18,7 @@ class Robot:
             self.pos_x -= 1
 
     def turnTo(self, direction):
-        key = f"{self.direction}{direction}"
+        key = f"{self.direction}{direction.upper()}"
         options = {
             'NL':'W',
             'SR':'W',
@@ -34,6 +34,7 @@ class Robot:
         self.direction = new_direction
 
     def handle_command(self, command, maxX, maxY):
+        command = command.upper()
         if command == 'M':
             self.move(maxX, maxY)
 
