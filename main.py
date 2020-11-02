@@ -1,8 +1,8 @@
 from robot import Robot
 
 def main():
-    MAX_Y = 5 - 1
-    MAX_X = 5 - 1
+    MAX_Y = 5
+    MAX_X = 5
     commands = []
 
     # r = Robot(1, 2, 'N')

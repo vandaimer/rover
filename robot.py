@@ -17,7 +17,16 @@ class Robot:
         if self.direction == 'W':
             self.pos_x -= 1
 
-    def turnTo(self, direction):
+        self.fix_position_XY(maxX, maxY)
+
+    def fix_position_XY(self, maxX, maxY):
+        if self.pos_x > maxX:
+            self.pos_x = maxX
+
+        if self.pos_y > maxY:
+            self.pos_y = maxY
+
+    def turn_to(self, direction):
         key = f"{self.direction}{direction.upper()}"
         options = {
             'NL':'W',
@@ -39,7 +48,7 @@ class Robot:
             self.move(maxX, maxY)
 
         if command in ['L', 'R']:
-            self.turnTo(command)
+            self.turn_to(command)
 
     def current_position(self):
         return f"{self.pos_x} {self.pos_y} {self.direction}"
