@@ -26,6 +26,12 @@ class Rover:
         if self.pos_y > maxY:
             self.pos_y = maxY
 
+        if self.pos_y < 0:
+            self.pos_y = 0
+
+        if self.pos_x < 0:
+            self.pos_x = 0
+
     def turn_to(self, direction):
         key = f"{self.direction}{direction.upper()}"
         options = {
