@@ -34,8 +34,11 @@ def main():
     for command in commands:
         second_rover.handle_command(command, MAX_X, MAX_Y)
 
-    print(first_rover.current_position())
-    print(second_rover.current_position())
+    print('\n')
+    print('----------------------------------------------------------------------------------')
+    print('-------------------------------------RESULT---------------------------------------')
+    print("First Rover: %s" % (first_rover.current_position(),))
+    print("Second Rover: %s" % (second_rover.current_position(),))
 
 
 
