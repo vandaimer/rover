@@ -19,6 +19,7 @@ class Rover:
 
         self.fix_position_XY(maxX, maxY)
 
+    # Do not allow the rover get out of the rectangular
     def fix_position_XY(self, maxX, maxY):
         if self.pos_x > maxX:
             self.pos_x = maxX
@@ -32,6 +33,7 @@ class Rover:
         if self.pos_x < 0:
             self.pos_x = 0
 
+    # Turn to another a new direction
     def turn_to(self, direction):
         key = f"{self.direction}{direction.upper()}"
         options = {
@@ -48,6 +50,7 @@ class Rover:
         new_direction = options[key]
         self.direction = new_direction
 
+    # Handle which kind of command is. Is it a Move or "turnTo" command?
     def handle_command(self, command, maxX, maxY):
         command = command.upper()
         if command == 'M':
